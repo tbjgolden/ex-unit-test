@@ -138,7 +138,7 @@
     </p>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(() => {
+        setTimeout(function () {
           var elements = document.querySelectorAll(".ex .after");
           var heights = [];
           var fontInfo = [
@@ -148,7 +148,7 @@
             ["Playfair Display SC", 30.8, 36.5],
           ];
           elements.forEach(function (el, i) {
-            const newNode = document.createElement("div");
+            var newNode = document.createElement("div");
             el.parentNode.parentNode.insertBefore(
               newNode,
               el.parentNode.nextSibling
@@ -164,34 +164,8 @@
               "px</small>";
             newNode.className = "description";
           });
-          console.log(heights);
         }, 1000);
       });
-    </script>
-    <script>
-      // The live reload at home:
-      if (window.location.protocol === "http:") {
-        let prevHtml = null;
-        const checkForChanges = () => {
-          window
-            .fetch("index.html", {
-              headers: {
-                pragma: "no-cache",
-                "cache-control": "no-cache",
-              },
-            })
-            .then((res) => res.text())
-            .then((html) => {
-              if (prevHtml === null) {
-                prevHtml = html;
-              } else if (prevHtml !== html) {
-                window.location.reload();
-              }
-            });
-        };
-        checkForChanges();
-        setInterval(checkForChanges, 1000);
-      }
     </script>
   </body>
 </html>
