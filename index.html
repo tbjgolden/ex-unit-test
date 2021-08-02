@@ -96,6 +96,50 @@
         line-height: 1;
         content: "0.5em";
       }
+      th, td {
+        text-align: right;
+        width: 80px;
+      }
+      .table {
+        display: flex;
+        flex-direction: column;
+        max-width: 400px;
+      }
+      .row {
+        display: flex;
+      }
+      .cell {
+        text-align: right;
+        flex: 0 0 50px;
+        font-variant-numeric: tabular-nums;
+      }
+      .cell.first {
+        text-align: left;
+        width: 160px;
+        flex: 1 1 160px;
+      }
+      .cell.rotate {
+        position: relative;
+        height: 100px;
+      }
+      .cell.rotate div {
+        position: absolute;
+        bottom: .5em;
+        right: 2em;
+        width: 200px;
+        text-align: right;
+        transform-origin: bottom right;
+        transform: rotate(30deg);
+      }
+
+      @media (max-width: 400px) {
+        .cell.rotate {
+          height: 130px;
+        }
+        .cell.rotate div {
+          transform: rotate(60deg);
+        }
+      }
     </style>
   </head>
   <body>
@@ -112,6 +156,66 @@
       </div>
       <div class="ex d">
         Fox<span class="after"></span><span class="em"></span>
+      </div>
+    </div>
+    <hr />
+    <h2>Key results</h2>
+    <div class="table">
+      <div class="row">
+        <div class="cell first"></div>
+        <div class="cell rotate"><div>Sacramento</div></div>
+        <div class="cell rotate"><div>Josefin Slab</div></div>
+        <div class="cell rotate"><div>Inter</div></div>
+        <div class="cell rotate"><div>Playfair Display SC</div></div>
+      </div>
+      <div class="row">
+        <div class="cell first">Chrome (MacOS)</div>
+        <div class="cell">19px</div>
+        <div class="cell">23px</div>
+        <div class="cell">33px</div>
+        <div class="cell">37px</div>
+      </div>
+      <div class="row">
+        <div class="cell first">Safari (iOS)</div>
+        <div class="cell">18px</div>
+        <div class="cell">23px</div>
+        <div class="cell">33px</div>
+        <div class="cell">36px</div>
+      </div>
+      <div class="row">
+        <div class="cell first">Chrome (Android)</div>
+        <div class="cell">18px</div>
+        <div class="cell">22px</div>
+        <div class="cell">33px</div>
+        <div class="cell">31px</div>
+      </div>
+      <div class="row">
+        <div class="cell first">Firefox (MacOS)</div>
+        <div class="cell">18px</div>
+        <div class="cell">23px</div>
+        <div class="cell">33px</div>
+        <div class="cell">31px</div>
+      </div>
+      <div class="row">
+        <div class="cell first">Safari (MacOS)</div>
+        <div class="cell">18px</div>
+        <div class="cell">23px</div>
+        <div class="cell">33px</div>
+        <div class="cell">36px</div>
+      </div>
+      <div class="row">
+        <div class="cell first">Edge v18 (Windows)</div>
+        <div class="cell">18px</div>
+        <div class="cell">23px</div>
+        <div class="cell">33px</div>
+        <div class="cell">31px</div>
+      </div>
+      <div class="row">
+        <div class="cell first">IE v11 (Windows)</div>
+        <div class="cell">30px</div>
+        <div class="cell">30px</div>
+        <div class="cell">30px</div>
+        <div class="cell">30px</div>
       </div>
     </div>
     <p>
